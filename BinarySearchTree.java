@@ -249,7 +249,7 @@ class Node {
     }
 }
 
-public class Main {
+public class BinarySearchTree {
     public static void main(String[] args) throws IOException {
         FastReader sc = new FastReader();
         BST bst = new BST();
