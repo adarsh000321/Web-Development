@@ -1,0 +1,331 @@
+JavaScript 
+
+- JS is Dynamically Typed Language. Eg: var a=1,b="HI";
+
+- ES6 Datatypes: number, string, boolean, undefined, null, object.
+
+- Variable Scopes in JavaScript (Usage of var and let keyword):
+	1) Global Scope: Outside outer most function
+	2) Local Scope: Inside the function
+	
+	eg: let globallet="Global";
+	    function fun(){
+		let locallet="Local";
+		console.log(globallet);
+		console.log(locallet);  
+	    }
+	    fun(); //Output: Global
+		   //	     Local
+
+	eg: let globallet="Global";
+	    function fun(){
+		let locallet="Local";
+	    }
+	    fun(); 
+	    console.log(globallet); 
+	    console.log(locallet);
+
+            //Output: Global
+            //	      Error becuse we cannot access local variable outside its scope
+
+	eg: let globallet="Global";
+	    function fun(){
+		locallet="Local";
+	    }
+	    fun(); 
+	    console.log(globallet); 
+	    console.log(locallet);
+
+            //Output: Global
+            //	      Local  (Because if you dont use any keyword before declaring a variable then it'll automatilcally be created in global scope)
+
+	eg: let globallet="Global";
+	    function fun(){
+		let globallet="Local";
+	    }
+	    fun(); 
+	    console.log(globallet);
+
+            //Output: Global (Because both variables have same name but local 'globallet' variable gets destroyed after done being executing function fun)
+
+	eg: let globallet="Global";
+	    function fun(){
+		let globallet="Local";
+		console.log(globallet);
+	    }
+	    fun();
+
+            //Output: Local (Because in variables having same names,variable within that scope is given preferences)
+
+	eg: let globallet="Global";
+	    function fun(){
+		let globallet="Local";
+		console.log(window.globallet);
+	    }
+	    fun();
+
+            //Output: Global (Because all global variables are attached to window object, hence we can access them from that)
+
+- 'use strict': put this keyword on top to use JavaScript in strict mode i.e., to use Modern JavaScript
+
+- const a=2; // this value cant be changed later becuse of const keyword 
+
+- switch statement eg: 
+
+	var i=9;// all no.s except 0 are true
+
+	switch(i){
+	    case 0:
+		console.log(0);
+		break;
+	    case 9:
+		console.log("HI");
+		break;
+	    default: // This will run if all other code fail 
+		console.log("Default Value");
+	 }
+
+- JavaScript Functions:
+		    eg: function fun(a , b){
+			     return a*b;
+			}
+			
+		    eg: var add=new Function("a","b","return a+b"); // function constructor
+
+- Objects in JavaScript: can be created in 3 ways
+	1) Using Object literals:
+		eg: var emp={id:12,name="Adarsh",salary:40000} // no need to define var/let keyword inside scope
+		    console.log(emp.id+" "+emp.name+" "+emp.salary); // Output: 12 Adarsh 40000
+
+	2) By creating instance of object (using new keyword)
+		eg: var emp=new Object();
+		    emp.id=12;
+		    emp.name="Adarsh";
+		    emp.salary=40000;
+		    console.log(emp.id+" "+emp.name+" "+emp.salary); // Output: 12 Adarsh 40000
+
+	3) By using object constructor
+		eg: function emp(id,name,salary){
+			this.id=id;
+			this.name=name;
+			this.salary=salary;
+			this.salaryChange=changeSalary; // define propery name same as function name
+			function changeSalary(otherSalary){
+				this.salary=otherSalary;
+			} // we can define functions as properties in objects. Same can be done with above methods
+		    }
+		    var ee=new emp(12,"Adarsh",40000); // function used as object
+		    console.log(emp.id+" "+emp.name+" "+emp.salary); // Output: 12 Adarsh 40000
+		    ee.salaryChange(45000);
+		    console.log(emp.id+" "+emp.name+" "+emp.salary); // Output: 12 Adarsh 45000
+
+- Arrays: can be declared in 3 ways
+	1) By array literal
+		eg: var arr=["A","B","c"];
+		    for(var i=0; i<arr.length; i++) console.log(arr[i]);
+
+	2) By creating array object using new keyword
+		eg: var arr=new Array();
+		    arr[0]=0;
+		    arr[1]=1;
+		    arr[2]=2;
+
+	3) By creating array constructor
+		eg: var arr=new Array(1,2,3,"Hi","Bi")
+
+- Strings: eg: var s="Hello"; OR var s=new String("Hello");
+
+- Date Object: You can use this object to display date and time in your webpage
+
+       	       You can use 4 variant of Date constructor to create date object
+		1) Date()  
+		2) Date(milliseconds)  
+		3) Date(dateString)  
+		4) Date(year, month, day, hours, minutes, seconds, milliseconds)  
+
+- Math object in JavaScript: varior useful methods are: Math.pow(), Math.ceil, Math.floor(), Math.sqrt(), Math.max(), Math.min(), Math.random() etc
+
+- Browser Object Model: is used to interact with the browser. The defaul object of browser is window means you can call all functions of window
+			using keyword 'window' or directly. eg: window.alert("Hello"); or alert("Hello");
+
+							  window (objects underneath window object)
+							     |
+			      ----------------------------------------------------------------
+		              |		     |		     |		     |		      |
+			  document        history         screen         navigator         location
+
+- window object: window is the object of browser, it is not the object of javascript. It gets created automatically by the browser
+                 Imp. Methods: alert(),prompt(),open(): opens new window, setTimeOut(), close(): closes current window
+
+- history object: history is the window property so it can be accessed by window.history or history. It reprents array of urls visited by the user.
+		  Imp Methods: window.history.length: returns length of array, window.history.forward(): goes to next page, 
+			       history.back(): goes to previous page, history.go(2): goes to given(eg:2 pages forward)page, history.go(2):goes 2 pages back
+
+- navigator object: The JavaScript navigator object is used for browser detection. It can be used to get browser 
+		    information such as appName, appCodeName, userAgent etc.
+		    The navigator object is the window property, so it can be accessed by: window.navigator Or navigator  
+
+		navigator.appName		returns the name
+		navigator.appVersion		returns the version
+		navigator.appCodeName		returns the code name
+		navigator.cookieEnabled		returns true if cookie is enabled otherwise false
+		navigator.userAgent		returns the user agent
+		navigator.language		returns the language. It is supported in Netscape and Firefox only.
+		navigator.userLanguage		returns the user language. It is supported in IE only.
+		navigator.plugins		returns the plugins. It is supported in Netscape and Firefox only.
+		navigator.systemLanguage	returns the system language. It is supported in IE only.
+		navigator.mimeTypes[]		returns the array of mime type. It is supported in Netscape and Firefox only.
+		navigator.platform		returns the platform e.g. Win32.
+		navigator.online		returns true if browser is online otherwise false.
+
+		Method: navigator.javaEnabled(): checks if java is enabled
+
+- screen object: The JavaScript screen object holds information of browser screen. It can be used to display screen width, height, colorDepth, pixelDepth etc.
+		 The navigator object is the window property, so it can be accessed by: window.screen Or screen
+
+		screen.width		returns the width of the screen
+		screen.height		returns the height of the screen
+		screen.availWidth	returns the available width
+		screen.availHeight	returns the available height
+		screen.colorDepth	returns the color depth
+		screen.pixelDepth	returns the pixel depth.  
+
+- document object model(DOM):Document object represents whole html document. When html document is loaded in a browser it becomes document object.
+			     Its a root elemnt that represents whole html document.Its is object of window, so can be accessed as window.documnet
+			     or documnet.
+			     Properties of documnet object that can be accessed and modified are:
+
+ 								documnet
+								    |
+							--------------------------
+							|	     |		 |
+						     anchors       forms       link
+								     |
+					-------------------------------------------------
+					|	|	|	|	|	|	|	
+				      text  textarea  checkbox  radio  select  reset   button
+									|
+								      option
+
+		write("string")			writes the given string on the doucment.
+		writeln("string")		writes the given string on the doucment with newline character at the end.
+		getElementById()		returns the element having the given id value.
+		getElementsByName()		returns all the elements having the given name value.	
+		getElementsByTagName()		returns all the elements having the given tag name.
+		getElementsByClassName()	returns all the elements having the given class name.
+		eg: document.form1.name.value : here form1 is the name of form we have given. name is attribute name and we want its value
+		The document.getElementById("id").innerHTML property can be used to write the dynamic html on the html document.
+		The innerText property can be used to write the dynamic text on the html document.
+ 
+- Object Oriented JavaScript:
+
+	Classes: In JS, the class is excuted in strict mode. So the code containing silent errors throw errors.
+
+	   eg: class Student{
+		   constructor(name,id){
+			this.name=name;
+			this.id=id;
+		   }
+		   showDetail(){
+			console.log(this.id+" "+this.name);
+		   }
+		}
+		var std=new Student("Adarsh",1234); 
+		std.showDetail(); // 1234 Adarsh
+
+	   eg: var emp=class{
+		     constructor(name){
+			this.name=name;
+		     }
+		}
+		var y=new emp("Adarsh");
+		console.log(y.name);
+
+	Constructor: 'constructor' keyword is used, only one constructor can be created in a class and can also access parent class's constructor by 'super' keyword.
+		 
+	    eg: class CompanyName{
+	 	   constructor(){
+			this.company="ADARSH CO.";
+		   }
+		}
+		class Employee extends CompanyName{
+		   constructor(id,name){
+			super();
+			this.name=name;
+			this.id=id;
+		   }
+		}
+		var emp=new Employee(1234,"ADA");
+		console.log(emp.name+" "+emp.id+" "+emp.company); 
+
+	Prototype: # Each object contains a prototype object. 
+		   # Whenever a function is created, a prototype property is added to it. This property is a prototype object, which holds a constructor property.
+		   # When we create an object, its corresponding functions are loaded into memory i.e., new functions are created on each object creation.
+		   # In prototype-based approach, each object creation of same type points to same function which gets stored in prototype in the main copy
+		     of object as one of its property. Thus, the functions are loaded once into the memory.
+		   # Each object contains a prototype object from which it acquire its properties and method. That prototype can again have another prototype in it
+		     and so on. Hence, this is known as prototype chaining.
+	
+		eg: function Student(firstName,lastName){
+			this.firstName=firstName;
+			this.lastName=lastName;
+		    }
+		    Student.prototype.fullName=function(){
+			return this.firstName+" "+this.lastName;
+		    }
+		    Student.prototype.school="APS";
+		    var std1=new Student("ADARSH","KUMAR");
+		    var std2=new Student("Lalita", "Sexena");
+		    console.log(std1.fullName()+" "+std1.company);// both points to same 
+		    console.log(std2.fullNmae()+" "+std2.company);// fullName() function and company property
+
+	Static Methods: # using 'static' keyword before declaring methods in a class, you can access them without creating their class's instance.
+			# If we declare more than one static method with a similar name, the JavaScript always invokes the last one.
+			# We can use 'this' keyword to call a static method within another static method.
+			# We cannot use 'this' keyword directly to call a static method within the non-static method. 
+			  In such case, we can call the static method either using the class name or as the property of the constructor.
+ 		eg: class Test{
+			static display(){
+				console.log("Display 1");
+			}
+			static display(){
+				console.log("Display 2");
+			}
+		    }
+		    Test.display(); // Output: Display 2
+
+		eg: class Test(){
+			constructor(){
+			    console.log(Test.display());
+			    console.log(this.constructor.display());
+			}
+			static display(){
+    			    return "Hello World";
+			}
+		    }
+		    var obj = new Test(); // Output : Hello World
+   					  //          Hello World
+
+		eg: class Test{
+			static display(){
+			    return "Hello World";
+			}
+			show(){
+			   console.log(Test.display()); // we cannot use 'this' keyword to call static methods in non-static ones
+			}
+		    }
+		    var obj = new Test();
+		    obj.show(); // Output: Hello World
+
+
+		    
+		   
+	
+
+
+
+
+
+
+
+
