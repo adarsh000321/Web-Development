@@ -89,7 +89,8 @@ class BST {
             }else {// if both children present then we delete from leaf
                 root.key=minUtil(root.right);
                 root.right=delete(root,root.key);
-                /* OPTIMIZATION
+                /* 
+                OPTIMIZATION
                 Node parentOfMinNode=root;
                 Node minNode=root.right;
                 while (minNode.left!=null){
