@@ -1,0 +1,109 @@
+
+								Basics Of HTML
+
+<!DOCTYPE html> <!-- defines the type of our html i.e., HTML5 -->
+<html>
+  <head>  <!--Head contains link to other files, meta data, titles etc -->
+     <meta charset="UTF-8">  <!--meta tags are used to desrcibe your website like what character set it is using etc --> 
+     <meta name="description" content="Describe your webpage here">  <!-- dercription property in name attribute is used to describe your webpage, helps in SEO --> 
+     <meta name="author" content="Adarsh">
+     <meta name="keywords" content="HTML, Tutorials, Webpage">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- This helps to view webpage in devices of different sizes --> 
+     <title> Title Goes Hear </title>
+  </head>
+  <body>  <!--Body contains all the content that user will see on this page -->
+     <h1>Heading 1: Max Size</h2> <!-- h1 to h6 for heading -->
+     <br/> <!-- creates new line -->
+     <hr/> <!-- creates horizontal line -->
+     <p>For any <i>Paragraph</i> you <b>might</b> want to p tag </p> <!-- i tag will italicize, b tag for bold --> 
+     <p> <big>Big</big> and <small>Small</samll> </p> <!-- big and small tag can be used to make text little bit big and small respectively -->
+     <p>H<sub>2</sub>O</p> <!-- sub tag for subsript -->
+     <p>10<sup>2</sup></p> <!-- sup for superscript -->
+
+     <a href="https://www.google.com" target="_blank">Google HomePage</a>  <!-- a tag is used to add links, set target to _blank to open it in a new page and
+         use https or http protocol for any external pages because by default it is file protocol that poins to your current page's directory  -->
+     <a href="folder1/page2.html"> This is some page of my website (Its not an external page) </a>  <!-- It will open page2 in folder1 in your current directory -->
+
+     <img src="linkOfImage(can be on your PC)" alt="Image Descripitive Text" width="100" height="66" /> <!-- You can either set width or height and html will
+                                                                                                             automatically set the other one -->
+
+     <video src="D:/videos/video.mp4" controls autoplay loop poster="thumb.jpg">This text is displayed when the video fails to load</video>
+     <!-- autoplay attribute: autoplays the video, loop: plays the video again after it ends, poster: thumbnail of video, controls: video wont play
+          without it, can also set width and heigth, adding youtube video: go to share -> click on embed -> copy and paste the code to your html --> 
+     
+     <ul>  <!-- ul: unordered list, ol: ordered list, li: list item -->
+       <li>Item 1</li>
+       <li>Item 2</li>
+       <li>Item 3</li>
+     </ul>
+
+     <ol type="a">  <!-- types can be '1', 'a', 'A', 'i'(roman numbers), 'I'(roman numbers in capital) -->
+       <li>Item 1</li>
+       <li>Item 2</li>
+       <li>Item 3</li>
+     </ol> 
+
+     <table>
+       <thead>
+          <caption>Heading Of The Table</caption>
+          <tr>
+            <th>Heading1</th>
+            <th>Heading2</th>
+            <th>Heading3</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr>
+            <td>Col1</td>
+            <td>Col2</td>
+            <td>Col3</td>
+          </tr>
+          <tr>
+            <td colspan="2">Col1</td>  <!-- colspan: Now this will take space of two coloumns -->
+            <td>Col2</td>
+            <td>Col3</td>
+          </tr>
+       </tbody>
+     </table>    
+
+     <!-- div and span tags are used for wrapping html content -->
+     
+     <form>
+       <input type="text" value="Enter name" />   <!-- type can also be radio, password, email, range, file, date, checkbox, 
+                                                       radio(put same name in name attribue to prevent multi-selective options), submit -->
+       <textarea>Area</textarea>
+     </form>
+
+     <iframe src="https://giraffeacademy.com/" width="1000" heigth="1000" frameborder="0">Displayed when unable to load src webpage</iframe>
+     <!-- iframe is used to display other webpage on your webpage. You might not be able to do so if the site prevent from displaying itself in our webpage -->
+  </body>
+</html>
+
+							Formatting Page (Helps in SEO and code readability)
+
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+     <header>  <!-- header is used to add links like about page, homepage, content etc. It can also be used to add other contents that goes above main content -->
+        <nav>  <!-- nav tag is used to add header links like homepage -->
+        <nav>
+     </header>
+
+     <main>  <!-- all the main content of the page goes in it -->
+        <article>  <!-- article tag is used if you're making blog sites or general reading sites that have differnet paragraphs in it -->  
+          <section>  <!-- section tag is used to separate paras into differenet section --> 
+             <aside>  <!-- aside tag is used to add content which is not related to your page likes ads -->
+             </aside>
+          </section>
+        
+          <section>
+          </section
+        <article>
+     </main>
+
+     <footer>  <!-- this tag generally contains contact links or emails or policies links etc --> 
+     </footer>
+  <!body>
+</html>
