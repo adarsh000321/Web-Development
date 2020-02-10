@@ -1,0 +1,626 @@
+=============================================================================Basic CSS=====================================================================================
+
+                                                                     HTML FILE NAME: index.html 
+   
+<html>
+  <head>
+  	<title>CSS Tutorial</title>
+  	<link rel="stylesheet" type="text/css" href="deletee.css">
+  	<!-- we can use css internally by using style tag -->
+  	<!-- <style> 
+  		h2{
+  			color: blue;
+  		}
+  	</style> -->
+  </head>
+  <body>
+     <h2> Welcome To CSS ! </h2>
+     <h1 style="color: pink; background-color: yellow;"> Welcome To CSS ! </h1> <!-- This way we use inline css -->
+     <h2 id="id">Use # for id</h2>
+     <h2 class="class"> Use . for class</h2>
+  </body>
+</html>
+                  
+
+                                                                      CSS FILE NAME:deletee.css
+
+h2{
+	color: red;
+}
+
+#id{
+	color: green;
+	/*we can set colors as : 1) rgb(255,0,0)  2) #ff0000  3) red;*/
+}
+
+.class{
+	color: purple;
+}
+
+====================================================================BackGround Properties==================================================================================
+
+                                                                          HTML FILE
+<html>
+  <head>
+  	<title>CSS Tutorial</title>
+  	<link rel="stylesheet" type="text/css" href="deletee.css">
+  </head>
+  <body>
+     <div class="backImg">
+     </div>
+
+     <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+
+     <div class="backImg1">
+     </div>
+     
+  </body>
+</html>
+
+                                                                       CSS FILE NAME:deletee.css
+
+*{               /* '*' (universal operator) is used to set initial values of our web page*/
+	margin: 0;
+	padding: 0;
+}
+
+.backImg{
+	/* vh stands for view port height (unit of height). X% is relative to local context 
+	   whereas Xvh is relative to full browser window */   
+	width: 100%;    /* covers whole page */
+	height:100vh;
+	/*background-color: blue;*/
+	background-image: url('rail.jpg');  /* url('../rail.jpg') : .. is used to go back */
+	background-repeat: no-repeat; /* other values are:repeat (allow repeatition), repeat-x (horizontal repeat), repeat-y*/
+	background-size:100% 100%; /*first value is width and second is height (css3 property)*/
+	background-attachment: fixed;/*used to control scrolling of image. Other values:scroll(scroll along with the containing block)*/
+}
+
+.backImg1{
+	width: 100%;
+	height: 100vh;
+	background-image: url('newYork.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+=========================================================================FONTS=============================================================================================
+
+                                                                       HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> <!-- google fonts -->
+</head>
+<body>
+	<h1 class="fontCSS">Welcome To Fonts In CSS Tutorial</h1>
+</body>
+</html>
+
+                                                                    CSS FILE NAME:deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.fontCSS{
+	font-family: 'Montserrat', sans-serif; /* If 'Montserrat' not found , apply sans-serif*/
+	font-variant: small-caps; /* 'small-caps' write all small letters to small capital letters*/
+	font-size: 5em; /* 1em =16px */
+	font-weight: bold; /* Or You can set values from 100-900*/
+	font-style: italic; 
+}
+
+=========================================================================Text In CSS=======================================================================================
+
+                                                                          HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> <!-- google fonts -->
+</head>
+<body>
+	<p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</body>
+</html>
+
+                                                                       CSS FILE NAME:deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#text{
+	font-family: 'Montserrat', sans-serif; /* If 'Montserrat' not found , apply sans-serif*/
+	font-size:2em;
+	color:red;
+	letter-spacing: 2px;
+	word-spacing: 5px;
+	text-indent: 50px; /*Gives spacing before start of the text*/
+	text-align: center; /*other values are: left,right*/
+	text-transform: uppercase;
+	direction: rtl;/*direction:rtl is similar to text-align:right and
+	                 direction:ltr is similar to text-align: left*/
+
+}
+
+=================================================================================Links=====================================================================================
+
+                                                                               HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<a href="https://www.google.com">CLICK TO GO TO GOOGLE</a>
+</body>
+</html>
+
+                                                                            CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*a:hover must come after a:visited and a:link to be effective*/
+
+/*link color*/
+a:link{
+	color: red;
+}
+
+/*visited link*/
+a:visited{
+	color: black;
+}
+
+/*hover link*/
+a:hover{
+	color: green;
+}
+
+/*active color: period when link is clicked*/
+a:active{
+	color: yellow;
+}
+
+==================================================================================Borders==================================================================================
+
+                                                                                 HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<div class="border"></div>
+</body>
+</html>
+
+                                                                              CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.border{
+	width: 500px;
+	height: 300px;
+	background-color:red;
+	/*set boder width,style and color*/
+	border-width: 5px;
+	border-style: solid;/*other values are: dashed, dotted*/
+	border-color: black;
+	/*set boder width,style and color at once*/
+	border:5px black solid;
+	border-radius: 50px; /*rounded corners (css3 property)*/
+	/*border-bottom/top/left/right-color: changes color of top border, bottom border and so on*/
+}
+
+==================================================================================LIST STYLES==============================================================================
+
+                                                                                   HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<ul>
+		<li>Item1</li>
+		<li>Item2</li>
+		<li>Item3</li>
+	</ul>
+	<ol>
+		<li>Item1</li>
+		<li>Item2</li>
+		<li>Item3</li>
+	</ol>
+</body>
+</html>
+
+                                                                                  CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	margin-left: 200px;
+	list-style-type: circle;/*other values :square*/
+}
+
+ol{
+	margin-left: 200px; 
+	list-style-type: lower-roman;/*other values: upper-roman,lower/upper-alpha */
+}
+
+====================================================================================BOX MODEL==============================================================================
+
+padding: padding is space b/w content and border
+margin: margin is space outside the border
+
+padding:10px 20px 5px 15px; /*first value if padding top, then second value is padding left, then third is padding bottom and then forth is padding right*/ 
+padding: 5px;/*all paddings of top, left, right , down are set to 5px*/
+padding: 0 20px; /*first value is for top & bottom and second is for left & right*/
+
+above syntax is also valid for margin property
+
+==============================================================================Scrollbar Overflow===========================================================================
+
+                                                                               HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</body>
+</html>
+
+                                                                          CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	width: 200px;
+	height: 200px;
+	border:red solid 5px;
+	overflow: scroll;/*other values: hidden(hides the overflow content), auto(gives scroll on side)*/
+
+	/*horizontally*/
+	/*overflow-x: scroll;*/
+	
+	/*vertically*/
+	/*overflow-y: hidden; */
+}
+
+=======================================================================Relative and Absolute Position======================================================================
+
+                                                                              HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<div class="parent">
+		<div class="child1">Adarsh</div>
+		<div class="child2">Adarsh</div>
+		<div class="child3">Adarsh</div>
+		<div class="child4">Adarsh</div>
+	</div>
+</body>
+</html>
+
+                                                                         CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+/*A Relative Positioned element is positioned relative to its normal position */
+/*An absolute positioned element is positioned relative to its first parent element that has position other 
+  than static*/
+/*All element have static as their default position. They have no affect of top, left, bottom, right properties*/
+
+.parent{
+	width: 600px;
+	height: 300px;
+	background-color: red;
+	position: relative;/*without it parent will have static position, therefore it won't be positioned relative to parent */
+
+}
+.child1{
+	width: 100px;
+	height: 30px;
+	background-color: green;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.child2{
+	width: 100px;
+	height: 30px;
+	background-color: yellow;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.child3{
+	width: 100px;
+	height: 30px;
+	background-color: blue;
+	position: absolute;
+	bottom:0;
+	left: 0;
+}
+.child4{
+	width: 100px;
+	height: 30px;
+	background-color: orange;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+=============================================================================z-index=======================================================================================
+
+                                                                            HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<div class="parent">
+		<div class="child1">Adarsh</div>
+		<div class="child2">Adarsh</div>
+		<div class="child3">Adarsh</div>
+		<div class="child4">Adarsh</div>
+	</div>
+</body>
+</html>
+
+                                                                         CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*with z-index we can decide which element will be on top when they are overlapping*/
+/*element with greater z-index will be on top*/
+.parent{
+	width: 600px;
+	height: 300px;
+	background-color: red;
+	position: relative;
+	z-index: 2;
+}
+.child1{
+	width: 100px;
+	height: 30px;
+	background-color: green;
+	position: absolute;
+	z-index: 4;
+}
+.child2{
+	width: 100px;
+	height: 30px;
+	background-color: yellow;
+	position: absolute;
+	z-index: 2;
+}
+.child3{
+	width: 100px;
+	height: 30px;
+	background-color: blue;
+	position: absolute;
+}
+.child4{
+	width: 100px;
+	height: 30px;
+	background-color: orange;
+	position: absolute;
+	z-index: 3;
+}
+
+=====================================================================================Float=================================================================================
+
+                                                                                    HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<div class="header">
+		<div class="logo">Adarsh</div>
+		<div class="menu">Menu</div>
+	</div>
+</body>
+</html>
+
+                                                                                CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.header{
+	width: 100%;
+	height: 80px;
+	background-color: black;
+}
+
+.logo{
+	width: 30%;
+	line-height: 80px;/*increase the content wrapping space vertically*/
+	text-align: center;
+	background-color: orange;
+	float: left;/*add float left/right if you want next element positioned by its side*/
+}
+
+.menu{
+	width: 70%;/*we want 70% from right so use float right*/
+	line-height: 80px;
+	background-color: red;
+	float: right;
+}
+
+===============================================================================Display=====================================================================================
+
+                                                                              HTML FILE
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<div class="header">
+		<div class="logo">Adarsh</div>
+		<div class="menu">
+			<ul>
+				<li>Home</li>
+				<li>Categories</li>
+				<li>About</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+
+                                                                          CSS FILE NAME: deletee.css
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.header{
+	width: 100%;
+	height: 80px;
+	background-color: black;
+}
+
+.logo{
+	width: 30%;
+	line-height: 80px;/*used to increase the height of the logo block by positioning text in center automatically*/
+	text-align: center;
+	background-color: orange;
+	float: left;/*add float left/right if you want next element positioned by its side*/
+}
+
+.menu{  /*all blocks in menu having SOME CONTENT will individually have these properties*/
+	width: 70%;
+	line-height: 80px;
+	background-color: red;
+	float: right;
+}
+
+ul{
+	list-style: none;
+	text-align: right; /*Or direction:rtl*/
+
+}
+
+li{
+	display: inline-block;/*inline will make all li elements from block level elements to inline elements and only occupies 
+	                  space that is enough to wrap its content (default). Other values are: block(changes inline elements
+	                  into block level), inline-block(wraps content horizontally only),hidden(hides all li blocks)   */
+	border:5px solid black;/*because of 5px border we have increased height by 5px height  */
+	padding: 0 20px; 
+}
+
+================================================================================Cursors====================================================================================
+
+                                                                               HTML FILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fonts Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="deletee.css">
+</head>
+<body>
+	<div style="cursor: auto;">auto</div>
+	<div style="cursor: crosshair;">crosshair</div>
+	<div style="cursor: ne-resize;">ne-resize</div><!--ne stands for north-east (in these cases north is down and south is up)-->
+	<div style="cursor: nw-resize;">nw-resize</div>
+	<div style="cursor: se-resize;">se-resize</div>
+	<div style="cursor: sw-resize;">sw-resize</div>
+	<div style="cursor: n-resize;">n-resize</div>
+	<div style="cursor: e-resize;">e-resize</div>
+	<div style="cursor: w-resize;">w-resize</div>
+	<div style="cursor: s-resize;">s-resize</div>
+	<div style="cursor: text;">text</div>
+	<div style="cursor: wait;">wait</div>
+	<div style="cursor: help;">help</div>
+	<div style="cursor: pointer;">pointer</div>
+	<div style="cursor: move;">move</div>
+	<div style="cursor: default;">default</div>
+</body>
+</html>
+
+=================================================================================
